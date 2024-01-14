@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'mvn jar:jar deploy:deploy'
+                sh 'cp /var/lib/jenkins/workspace/spring-boot-rest-api-demo-pipeline/target/spring-boot-rest-api-demo-0.0.1-SNAPSHOT.jar /home/deployments/'
             }
         }
     }
