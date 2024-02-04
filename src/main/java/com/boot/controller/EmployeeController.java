@@ -1,7 +1,6 @@
 package com.boot.controller;
 
-import com.boot.entity.Department;
-import com.boot.entity.Employee;
+import com.boot.entity.employee.Employee;
 import com.boot.feedback.AcknowledgementReceipt;
 import com.boot.util.CommonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j

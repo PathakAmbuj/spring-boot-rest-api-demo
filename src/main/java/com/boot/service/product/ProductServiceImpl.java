@@ -1,7 +1,8 @@
-package com.boot.service;
+package com.boot.service.product;
 
-import com.boot.entity.Product;
-import com.boot.repository.ProductRepository;
+import com.boot.entity.product.Product;
+import com.boot.repository.product.ProductRepository;
+import com.boot.service.CrudService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +20,18 @@ public class ProductServiceImpl implements CrudService<Product> {
     @Autowired
     private final ProductRepository productRepository;
 
-    public ResponseEntity<Product> saveProduct(Product product) {
+    public ResponseEntity<Product> save(Product product) {
         Product newProduct = productRepository.save(product);
         return ResponseEntity.ok(newProduct);
     }
 
     // Get all products
-    public ResponseEntity<List<Product>> fetchAllProducts() {
+    public ResponseEntity<List<Product>> fetchAll() {
         return ResponseEntity.ok(productRepository.findAll());
     }
 
     // Get a product by ID
-    public ResponseEntity<Optional<Product>> fetchProductById(Long id) {
+    public ResponseEntity<Optional<Product>> fetchById(Long id) {
         Optional<Product> product = productRepository.findById(id);
         if (product.isPresent()) {
             return ResponseEntity.ok(product);
@@ -41,7 +42,7 @@ public class ProductServiceImpl implements CrudService<Product> {
     }
 
     //  update a single product from the database
-    public ResponseEntity<Product> updateProduct(Long id, Product updatedProduct) {
+    public ResponseEntity<Product> update(Long id, Product updatedProduct) {
         if (id == null) {
             throw new IllegalArgumentException("ID cannot be null");
         }
@@ -54,7 +55,7 @@ public class ProductServiceImpl implements CrudService<Product> {
     }
 
     // delete a single product
-    public ResponseEntity<String> deleteProduct(Long id) {
+    public ResponseEntity<String> delete(Long id) {
         productRepository.deleteById(id);
         return ResponseEntity.ok("Product Deleted Successfully");
     }

@@ -1,7 +1,7 @@
 package com.boot.controller;
 
-import com.boot.entity.Department;
-import com.boot.entity.Employee;
+import com.boot.entity.employee.Department;
+import com.boot.entity.employee.Employee;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;

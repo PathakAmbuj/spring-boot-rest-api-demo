@@ -2,10 +2,22 @@ spring:
   h2:
     console.enabled: true
   datasource:
-    url: jdbc:h2:mem:mydb
+    jdbcUrl: jdbc:h2:mem:my_db
     username: sa
     password: password
     driverClassName: org.h2.Driver
+    defer-datasource-initialization: true
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+  second-datasource:
+    jdbcUrl: jdbc:h2:mem:dev_db
+    username: admin
+    password: password
+    driverClassName: org.h2.Driver
+    defer-datasource-initialization: true
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      ddl-auto: create-drop
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
@@ -14,6 +26,9 @@ spring:
   output:
     ansi:
       enabled: always
+  sql:
+    init:
+      mode: always
 
 server:
   port : 8081

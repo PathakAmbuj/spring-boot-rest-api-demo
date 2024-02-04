@@ -1,8 +1,8 @@
 package com.boot.controller;
 
-import com.boot.entity.Product;
-import com.boot.repository.ProductRepository;
-import com.boot.service.ProductServiceImpl;
+import com.boot.entity.product.Product;
+import com.boot.repository.product.ProductRepository;
+import com.boot.service.product.ProductServiceImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;

@@ -1,6 +1,7 @@
 package com.boot.repository;
 
-import com.boot.entity.Product;
+import com.boot.entity.product.Product;
+import com.boot.repository.product.ProductRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

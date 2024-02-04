@@ -1,7 +1,8 @@
 package com.boot.service;
 
-import com.boot.entity.Product;
-import com.boot.repository.ProductRepository;
+import com.boot.entity.product.Product;
+import com.boot.repository.product.ProductRepository;
+import com.boot.service.product.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
@@ -28,7 +29,7 @@ public class ProductServiceTest {
     @Test
     public void saveProductTest(){
         Product product = new Product("Apple", 1234567.0, 1);
-        productService.saveProduct(product);
+        productService.save(product);
         verify(productRepository).save(product);
     }
 

@@ -1,5 +1,6 @@
 package com.boot.service;
 
+import com.boot.entity.product.Product;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -7,9 +8,13 @@ import java.util.Optional;
 
 public interface CrudService<T> {
 
-    ResponseEntity<T> saveProduct(T product);
+    ResponseEntity<T> save(T saveObject);
 
-    ResponseEntity<List<T>> fetchAllProducts();
+    ResponseEntity<List<T>> fetchAll();
 
-    ResponseEntity<Optional<T>> fetchProductById(Long id);
+    ResponseEntity<Optional<T>> fetchById(Long id);
+
+    ResponseEntity<T> update(Long id, T updateObject);
+
+    ResponseEntity<String> delete(Long id);
 }
