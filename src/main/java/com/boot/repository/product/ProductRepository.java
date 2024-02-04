@@ -1,7 +1,7 @@
-package com.boot.repository;
+package com.boot.repository.product;
 
 
-import com.boot.entity.Product;
+import com.boot.entity.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

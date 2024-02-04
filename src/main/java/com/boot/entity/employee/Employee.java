@@ -1,4 +1,4 @@
-package com.boot.entity;
+package com.boot.entity.employee;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

@@ -1,9 +1,9 @@
 package com.boot.controller;
 
-import com.boot.entity.Product;
-import com.boot.repository.ProductRepository;
+import com.boot.entity.product.Product;
+import com.boot.repository.product.ProductRepository;
 import com.boot.service.CrudService;
-import com.boot.service.ProductServiceImpl;
+import com.boot.service.product.ProductServiceImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -92,7 +92,7 @@ public class ProductControllerTest {
         Product product = new Product(5L, "Samsung", 45679, 2);
         ResponseEntity<Product> response = ResponseEntity.ok(product);
         when(productRepository.save(Mockito.any(Product.class))).thenAnswer(i -> i.getArguments()[0]);
-        Mockito.when(productService.saveProduct(
+        Mockito.when(productService.save(
                 Mockito.any(Product.class))).thenReturn(response);
        // when(productService.saveProduct(product)).thenReturn(productRepository.save(product));
         //when(productRepository.save(Mockito.any(Product.class))).thenAnswer(product);
@@ -126,7 +126,7 @@ public class ProductControllerTest {
                 new Product(2L, "Apple", 45679, 2),
                 new Product(3L, "Google", 45679, 2));
 
-        when(productService.fetchAllProducts()).thenReturn(ResponseEntity.ok(productList));
+        when(productService.fetchAll()).thenReturn(ResponseEntity.ok(productList));
 
         ResultActions response = this.mockMvc.perform(get("/api/v1/products"));
 

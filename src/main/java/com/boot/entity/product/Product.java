@@ -1,4 +1,4 @@
-package com.boot.entity;
+package com.boot.entity.product;
 
 import lombok.*;
 
