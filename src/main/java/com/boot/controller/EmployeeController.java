@@ -23,6 +23,8 @@ public class EmployeeController {
     @PostMapping(value = "/employee", consumes = MediaType.APPLICATION_JSON_VALUE)
     private ResponseEntity<AcknowledgementReceipt> employeeInfo(@RequestBody Employee employeeInfo){
 
+        log.info("request Body : "+employeeInfo);
+
         List<Integer> deptIdList = new ArrayList<>();
                 employeeInfo.getDepartment().forEach(e -> deptIdList.add(e.getDeptId()));
 
